@@ -22,10 +22,6 @@ public class Remover extends HttpServlet{
 		Profissional uLogado = new Profissional();
 		uLogado = prof.findByNome(req.getParameter("nomeUsuario"));
 		
-		System.out.println(uDeletado.getNome()+"--");
-		System.out.println(uLogado.getNome()+"--");
-		System.out.println(i);
-		
 		if(!uDeletado.getNome().equals(uLogado.getNome())){
 			System.out.println(i);
 			prof.delete(i);

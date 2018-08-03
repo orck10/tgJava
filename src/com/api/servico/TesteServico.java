@@ -12,5 +12,5 @@ public interface TesteServico {
 	public List<Teste> findProficinal(Integer id);
 	public Teste update(Teste ant, Teste atu);
 	public Boolean delete(Integer id);
-	public List<Crianca> findCriancaProfId(Integer i); 
+	public List<Crianca> findCriancaProfId(Integer i);
 }

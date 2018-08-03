@@ -112,4 +112,14 @@
         <servlet-name>AtualicarApp</servlet-name>
         <url-pattern>/AtualicarApp.action</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PersistirTestes</servlet-name>
+        <servlet-class>com.core.servlet.PersistirTestes</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>PersistirTestes</servlet-name>
+        <url-pattern>/PersistirTestes.action</url-pattern>
+    </servlet-mapping>
 </web-app>

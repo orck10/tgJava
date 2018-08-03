@@ -10,7 +10,6 @@ import com.google.gson.Gson;
 import com.api.modelo.Profissional;
 
 import com.core.servico.ProfissionalServicoImple;
-import com.core.servico.TesteServicoImp;
 
 public class AutenticarApp extends HttpServlet{
 	
@@ -27,8 +26,6 @@ public class AutenticarApp extends HttpServlet{
         
         Profissional usuario = new Profissional();
 	    ProfissionalServicoImple prof = new ProfissionalServicoImple();
-	    
-	    TesteServicoImp teste = new TesteServicoImp();
 	    
 	    Gson gson = new Gson();
 	    
@@ -51,7 +48,7 @@ public class AutenticarApp extends HttpServlet{
             	resp.setCharacterEncoding("UTF-8");
             	String jsonUsu = gson.toJson(uLogado);
             	int x = uLogado.getProfId().intValue();
-            	String jsonCri = gson.toJson(teste.findCriancaProfId(x));
+            	String jsonCri = gson.toJson(prof.findCriancaProfId(x));
                 //resp.getWriter().write("{\"error\":\"false\",\"name\":\""+uLogado.getNome()+"\"}");
             	resp.getWriter().write("{\"error\":\"false\", \"usuario\":"+jsonUsu+", \"criancas\":"+jsonCri+"}");
             }catch(Exception e){

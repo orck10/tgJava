@@ -70,7 +70,7 @@ public class FaseDaoImp implements FaseDao{
 	@Override
 	public List<Fase> findByTesteId(Integer id) {
 		try {
-			PreparedStatement comandoSQLp = conexao.prepareStatement("select * from fase where teste_id = 1;");
+			PreparedStatement comandoSQLp = conexao.prepareStatement("select * from fase where teste_id = ?;");
 			List<Fase> lista = new ArrayList<Fase>();
 			ResultSet rs = comandoSQLp.executeQuery();
 			while(rs.next()) {

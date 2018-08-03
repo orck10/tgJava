@@ -159,7 +159,8 @@ public class TesteDaoImp implements TesteDao{
 
 	@Override
 	public List<Crianca> findCriancaProfId(Integer i) {
-		try {			PreparedStatement comandoSQLp = conexao.prepareStatement("select c.crianca_Id, c.crianca_Nascimento, c.crianca_Nome, c.crianca_Sexo from crianca c, teste t where t.psico_Id = ? and t.crianca_Id = c.crianca_Id");
+		try {			
+			PreparedStatement comandoSQLp = conexao.prepareStatement("select c.crianca_Id, c.crianca_Nascimento, c.crianca_Nome, c.crianca_Sexo from crianca c, teste t where t.psico_Id = ? and t.crianca_Id = c.crianca_Id");
 			List<Crianca> lista = new ArrayList<Crianca>();
 			comandoSQLp.setInt(1, i);
 			ResultSet rs = comandoSQLp.executeQuery();
@@ -168,7 +169,6 @@ public class TesteDaoImp implements TesteDao{
 	            c.setId(rs.getInt(1));
 	            c.setNome(rs.getString(3));
 	            Calendar d = Calendar.getInstance();
-	            System.out.println("1111");
 	            d.setTime(rs.getDate(2));
 	            c.setCriancaNasc(d);
 	            c.setCriancaSexo(rs.getString(4));

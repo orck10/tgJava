@@ -2,6 +2,7 @@ package com.api.dao;
 
 import java.util.List;
 
+import com.api.modelo.Crianca;
 import com.api.modelo.Profissional;
 
 public interface ProfissionalDao {
@@ -11,5 +12,6 @@ public interface ProfissionalDao {
 	public List<Profissional> findAll();
 	public Profissional update(Profissional profissionalAnt, Profissional profissionalAt);
     public boolean delete(Profissional profissional);
-    public boolean delete(Integer id);   
+    public boolean delete(Integer id);
+    public List<Crianca> findCriancaProfId(Integer i);
 }

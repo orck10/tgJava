@@ -3,6 +3,7 @@ package com.core.servico;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.api.modelo.Crianca;
 import com.api.modelo.Profissional;
 import com.api.servico.ProfissionalServico;
 import com.core.dao.ProfissionalDaoImp;
@@ -59,6 +60,13 @@ public class ProfissionalServicoImple implements ProfissionalServico{
 			System.out.println("Falhou o delet por id");
 		}
 		return false;
+	}
+
+	@Override
+	public List<Crianca> findCriancaProfId(Integer i) {
+		List<Crianca> l = new ArrayList<Crianca>();
+		l = profi.findCriancaProfId(i);
+		return l;
 	}
 
 }

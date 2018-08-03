@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import com.api.dao.ProfissionalDao;
+import com.api.modelo.Crianca;
 import com.api.modelo.Profissional;
 
 public class ProfissionalDaoImp implements ProfissionalDao{
@@ -175,6 +176,31 @@ public class ProfissionalDaoImp implements ProfissionalDao{
 			System.out.print("\nErro de conexão pelo id... remove");
 			System.out.println(e);
 			return false;
+		}
+	}
+
+	@Override
+	public List<Crianca> findCriancaProfId(Integer i) {
+		try {			
+			PreparedStatement comandoSQLp = conexao.prepareStatement("select c.crianca_Id, c.crianca_Nascimento, c.crianca_Nome, c.crianca_Sexo from crianca c where c.crianca_Id in (SELECT t.crianca_Id FROM teste t where t.psico_Id = ? and t.teste_Id not in (select teste_Id from fase f))");
+			List<Crianca> lista = new ArrayList<Crianca>();
+			comandoSQLp.setInt(1, i);
+			ResultSet rs = comandoSQLp.executeQuery();
+			while(rs.next()){
+				Crianca c = new Crianca();
+	            c.setId(rs.getInt(1));
+	            c.setNome(rs.getString(3));
+	            Calendar d = Calendar.getInstance();
+	            d.setTime(rs.getDate(2));
+	            c.setCriancaNasc(d);
+	            c.setCriancaSexo(rs.getString(4));
+	            System.out.println("add a Lista");
+	            lista.add(c);
+			}
+			return lista;
+		} catch (Exception e) {
+			System.out.print("\nErro de conexão... Crianca no Teste");
+			return null;
 		}
 	}
 
