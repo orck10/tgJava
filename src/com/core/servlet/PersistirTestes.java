@@ -2,13 +2,17 @@ package com.core.servlet;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.api.modelo.Fase;
 import com.api.modelo.Profissional;
 import com.core.servico.ProfissionalServicoImple;
+import com.core.servico.TesteServicoImp;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -28,6 +32,8 @@ public class PersistirTestes extends HttpServlet{
 		Profissional uLogado = new Profissional();
 		uLogado = prof.findByNome(nomeUsuario);
 		
+		TesteServicoImp teste = new TesteServicoImp();
+		
 		if(uLogado != null && uLogado.getSenha().equals(senha)) {
 			try {
 				// Read from request
@@ -44,14 +50,22 @@ public class PersistirTestes extends HttpServlet{
 			    String crianca = object.get("cricanca").getAsString();
 			    JsonArray array = object.get("resultados").getAsJsonArray();
 			    
+			    List<Fase> fase = new ArrayList<Fase>();
+			    
+			    int x = 1;
+			    
 			    System.out.println(crianca);
 			    for(Object n : array) {
+			    	Fase f = new Fase();
 			    	JsonArray r = jsonParser.parse(n.toString()).getAsJsonArray();
-			    	for(Object i: r) {
-			    		System.out.println(i);	
-			    	}
+			    	f.setFaseAcerto(r.get(0).getAsInt());
+			    	f.setFaseTentativas(r.get(1).getAsInt());
+			    	f.setFaseNumero(x);
+			    	fase.add(f);
+			    	x++;
 			    }
 			    
+			    teste.persistirFase(crianca, fase);
 			    
 			    resp.setContentType("application/json");
 			    resp.setCharacterEncoding("UTF-8");

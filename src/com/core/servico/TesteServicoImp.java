@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.api.modelo.Crianca;
+import com.api.modelo.Fase;
 import com.api.modelo.Teste;
 import com.api.servico.TesteServico;
+import com.core.dao.FaseDaoImp;
 import com.core.dao.TesteDaoImp;
 
 public class TesteServicoImp implements TesteServico{
@@ -55,6 +57,27 @@ public class TesteServicoImp implements TesteServico{
 	@Override
 	public List<Crianca> findCriancaProfId(Integer i) {
 		return this.teste.findCriancaProfId(i);
+	}
+
+	@Override
+	public boolean persistirFase(String crianca, List<Fase> fases) {
+		try {
+			CriancaServicoImp servCri = new CriancaServicoImp();
+			Crianca cri = servCri.findByNome(crianca);
+			
+			Teste teste = this.teste.findCrianca(cri.getId().intValue());
+			
+			FaseDaoImp fase = new FaseDaoImp();
+			
+			for(Fase f: fases) {
+				f.setTesteId(teste.getTesteId());	
+				fase.insert(f);
+			}
+			return true;
+		}
+		catch (Exception e) {
+			return false;
+		}
 	}
 
 }
