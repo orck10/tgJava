@@ -26,6 +26,7 @@
 	                <br/>
 	                <input name="senha" type="password" required class="formInput formTextInput">
 	                <br/>
+	                <br/>
 	           </label>
 	                <input type="submit" value="Entrar" class="submitButton">
 	        </form>
