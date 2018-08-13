@@ -1,6 +1,7 @@
 package com.core.servico;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import com.api.modelo.Crianca;
@@ -73,6 +74,15 @@ public class TesteServicoImp implements TesteServico{
 				f.setTesteId(teste.getTesteId());	
 				fase.insert(f);
 			}
+			
+			Teste teste1 = new Teste();
+			teste1.setCriancaId(teste.getCriancaId());
+			teste1.setPsicoId(teste.getPsicoId());
+			Calendar data = Calendar.getInstance();
+			teste1.setTesteData(data);
+			teste1.setTesteId(teste.getTesteId());
+			teste1.setTesteTipo(teste.getTesteTipo());
+			this.teste.update(teste, teste1);
 			return true;
 		}
 		catch (Exception e) {
