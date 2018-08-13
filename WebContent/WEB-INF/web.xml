@@ -122,4 +122,14 @@
         <servlet-name>PersistirTestes</servlet-name>
         <url-pattern>/PersistirTestes.action</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ResultadosTeste</servlet-name>
+        <servlet-class>com.core.servlet.ResultadosTeste</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ResultadosTeste</servlet-name>
+        <url-pattern>/ResultadosTeste.action</url-pattern>
+    </servlet-mapping>
 </web-app>

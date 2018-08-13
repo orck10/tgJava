@@ -19,13 +19,20 @@
     </head>
 	
 	<body>
-		<br/>
-		<br/>
+		<br>
+		<br>
 		<div style="background:white; width:80%;position: relative; left: 10%;">
+			<br>
 			<header>
-				<h2 align="center">Cliente</h2>
+				<h1 align="center">Cliente</h1>
 			</header>
-			
+			<div>
+				<form action="ResultadosTeste.action" method="post" align="center">
+		        	<input name="nomeUsuario" type="hidden" value="<%=p.getNome()%>" />
+		            <input name="id" type="hidden" value="<%=c.getId().toString()%>" />
+		            <input type="submit" value="Resultados de <%=c.getNome()%>" class="submitButton">  
+		    	</form>
+			</div>
 			<br/>
 			<form action="AtualicarCliente.action" method="post">
 						<div>
