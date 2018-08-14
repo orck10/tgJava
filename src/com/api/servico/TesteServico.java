@@ -15,4 +15,5 @@ public interface TesteServico {
 	public Boolean delete(Integer id);
 	public List<Crianca> findCriancaProfId(Integer i);
 	public boolean persistirFase(String crianca, List<Fase> fases);
+	public List<String> resultados(String crianca);
 }

@@ -8,12 +8,15 @@ import com.api.modelo.Crianca;
 import com.api.modelo.Fase;
 import com.api.modelo.Teste;
 import com.api.servico.TesteServico;
+import com.core.dao.CriancaDaoImp;
 import com.core.dao.FaseDaoImp;
 import com.core.dao.TesteDaoImp;
 
 public class TesteServicoImp implements TesteServico{
 	
 	private TesteDaoImp teste = new TesteDaoImp();
+	private CriancaDaoImp crianca = new CriancaDaoImp();
+	private FaseDaoImp fases = new FaseDaoImp();
 	
 	@Override
 	public Teste insert(Teste t) {
@@ -88,6 +91,32 @@ public class TesteServicoImp implements TesteServico{
 		catch (Exception e) {
 			return false;
 		}
+	}
+
+	@Override
+	public List<String> resultados(String crianca) {
+		Crianca cri = this.crianca.findByNome(crianca);
+		Teste teste = this.teste.findCrianca(cri.getId().intValue());
+		List<Fase> listaFases = this.fases.findByTesteId(teste.getTesteId());
+		
+		int count = 0;
+		
+		for(Fase f: listaFases) {
+			switch(f.getFaseTentativas()) {
+				case 1:
+					count += 3;
+					break;
+				case 2:
+					count +=2;
+					break;
+				case 3:
+					count +=1;
+					break;
+				default:
+					count +=0;
+			}			
+		}
+		return null;
 	}
 
 }
