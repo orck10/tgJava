@@ -1,7 +1,7 @@
 package com.api.modelo;
 
 public class Fase {
-	private Identificador faseId;
+	private int faseId;
 	private int faseTentativas;
 	private int faseAcerto;
 	private int faseNumero;
@@ -16,11 +16,11 @@ public class Fase {
 	}
 
 	public int getFaseId() {
-		return faseId.getId();
+		return faseId;
 	}
 	
 	public void setFaseId(int faseId) {
-		this.faseId.setId(faseId);
+		this.faseId = faseId;
 	}
 	
 	public int getFaseTentativas() {

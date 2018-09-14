@@ -1,135 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-  version="3.1"
-  metadata-complete="true">
+	version="3.1" metadata-complete="true">
 
-    <description>
+	<description>
       Tg Torre
     </description>
-    <display-name>Tg Torre</display-name>
-    
-    <servlet>
-        <servlet-name>Login</servlet-name>
-        <servlet-class>com.core.servlet.Login</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern></url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>Autenticador</servlet-name>
-        <servlet-class>com.core.servlet.Autenticador</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Autenticador</servlet-name>
-        <url-pattern>/Autenticador.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>Cadastra</servlet-name>
-        <servlet-class>com.core.servlet.Cadastra</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Cadastra</servlet-name>
-        <url-pattern>/Cadastra.action</url-pattern>
-    </servlet-mapping>
-	
-	    
-    <servlet>
-        <servlet-name>Remover</servlet-name>
-        <servlet-class>com.core.servlet.Remover</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Remover</servlet-name>
-        <url-pattern>/Remover.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>Sair</servlet-name>
-        <servlet-class>com.core.servlet.Sair</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Sair</servlet-name>
-        <url-pattern>/Sair.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>CadastrarCrianca</servlet-name>
-        <servlet-class>com.core.servlet.CadastrarCrianca</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>CadastrarCrianca</servlet-name>
-        <url-pattern>/CadastrarCrianca.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>RemoverCrianca</servlet-name>
-        <servlet-class>com.core.servlet.RemoverCrianca</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>RemoverCrianca</servlet-name>
-        <url-pattern>/RemoverCrianca.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>TelaDeCliente</servlet-name>
-        <servlet-class>com.core.servlet.TelaDeCliente</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>TelaDeCliente</servlet-name>
-        <url-pattern>/TelaDeCliente.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>AtualicarCliente</servlet-name>
-        <servlet-class>com.core.servlet.AtualicarCliente</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>AtualicarCliente</servlet-name>
-        <url-pattern>/AtualicarCliente.action</url-pattern>
-    </servlet-mapping>
-    
-   	<servlet>
-        <servlet-name>AtualicarApp</servlet-name>
-        <servlet-class>com.core.servlet.AutenticarApp</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>AtualicarApp</servlet-name>
-        <url-pattern>/AtualicarApp.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>PersistirTestes</servlet-name>
-        <servlet-class>com.core.servlet.PersistirTestes</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>PersistirTestes</servlet-name>
-        <url-pattern>/PersistirTestes.action</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>ResultadosTeste</servlet-name>
-        <servlet-class>com.core.servlet.ResultadosTeste</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>ResultadosTeste</servlet-name>
-        <url-pattern>/ResultadosTeste.action</url-pattern>
-    </servlet-mapping>
+	<display-name>Tg Torre</display-name>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.core.servlet.Login</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Autenticador</servlet-name>
+		<servlet-class>com.core.servlet.Autenticador</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Autenticador</servlet-name>
+		<url-pattern>/Autenticador.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Cadastra</servlet-name>
+		<servlet-class>com.core.servlet.Cadastra</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Cadastra</servlet-name>
+		<url-pattern>/Cadastra.action</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Remover</servlet-name>
+		<servlet-class>com.core.servlet.Remover</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Remover</servlet-name>
+		<url-pattern>/Remover.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Sair</servlet-name>
+		<servlet-class>com.core.servlet.Sair</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Sair</servlet-name>
+		<url-pattern>/Sair.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CadastrarCrianca</servlet-name>
+		<servlet-class>com.core.servlet.CadastrarCrianca</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CadastrarCrianca</servlet-name>
+		<url-pattern>/CadastrarCrianca.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RemoverCrianca</servlet-name>
+		<servlet-class>com.core.servlet.RemoverCrianca</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RemoverCrianca</servlet-name>
+		<url-pattern>/RemoverCrianca.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>TelaDeCliente</servlet-name>
+		<servlet-class>com.core.servlet.TelaDeCliente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TelaDeCliente</servlet-name>
+		<url-pattern>/TelaDeCliente.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AtualicarCliente</servlet-name>
+		<servlet-class>com.core.servlet.AtualicarCliente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AtualicarCliente</servlet-name>
+		<url-pattern>/AtualicarCliente.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AtualicarApp</servlet-name>
+		<servlet-class>com.core.servlet.AutenticarApp</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AtualicarApp</servlet-name>
+		<url-pattern>/AtualicarApp.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>PersistirTestes</servlet-name>
+		<servlet-class>com.core.servlet.PersistirTestes</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PersistirTestes</servlet-name>
+		<url-pattern>/PersistirTestes.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ResultadosTeste</servlet-name>
+		<servlet-class>com.core.servlet.ResultadosTeste</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ResultadosTeste</servlet-name>
+		<url-pattern>/ResultadosTeste.action</url-pattern>
+	</servlet-mapping>
 </web-app>

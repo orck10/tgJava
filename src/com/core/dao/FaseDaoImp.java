@@ -70,7 +70,8 @@ public class FaseDaoImp implements FaseDao{
 	@Override
 	public List<Fase> findByTesteId(Integer id) {
 		try {
-			PreparedStatement comandoSQLp = conexao.prepareStatement("select * from fase where teste_id = ?;");
+			PreparedStatement comandoSQLp = conexao.prepareStatement("select fase_Id, fase_Tentativas, fase_acerto, fase_Numero, fase.teste_Id from fase where teste_id = ?;");
+			comandoSQLp.setString(1, id.toString());
 			List<Fase> lista = new ArrayList<Fase>();
 			ResultSet rs = comandoSQLp.executeQuery();
 			while(rs.next()) {
@@ -86,7 +87,7 @@ public class FaseDaoImp implements FaseDao{
 			return lista;
 		}
 		catch (Exception e) {
-			System.out.print("\nErro de conexão... find all");
+			System.out.print("\nErro de conexão...  find by testeId");
 			return null;
 		}
 	}
