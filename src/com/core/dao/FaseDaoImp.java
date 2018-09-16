@@ -1,6 +1,5 @@
 package com.core.dao;
 
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -8,19 +7,15 @@ import java.util.List;
 
 import com.api.dao.FaseDao;
 import com.api.modelo.Fase;
+import com.api.modelo.Recursos;
 
 public class FaseDaoImp implements FaseDao{
 	
 	java.sql.Connection conexao;
+	Recursos recursos = new Recursos();
 	
 	public FaseDaoImp() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/torre","root","100889");
-            System.out.println("Conectado.. Fase Dao...");
-		} catch (Exception e) {
-			System.out.print("Erro de conexão...ProblemaDaoImp");
-		}
+		conexao = recursos.devolveAnbiente();
 	}
 	
 	@Override

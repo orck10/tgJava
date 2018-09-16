@@ -4,25 +4,20 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.api.dao.CriancaDao;
 import com.api.modelo.Crianca;
+import com.api.modelo.Recursos;
 
 public class CriancaDaoImp implements CriancaDao{
 	
 	java.sql.Connection conexao;
+	Recursos recursos = new Recursos();
 	
 	public CriancaDaoImp() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/torre","root","100889");
-            System.out.println("Conectado.. Crianca Dao...");
-		} catch (Exception e) {
-			System.out.print("Erro de conexão...ProblemaDaoImp");
-		}
+		conexao = recursos.devolveAnbiente();
 	}
 	
 	@Override

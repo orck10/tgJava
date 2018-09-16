@@ -3,26 +3,21 @@ package com.core.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.api.dao.ProblemaDao;
 import com.api.modelo.Problema;
+import com.api.modelo.Recursos;
 
 public class ProblemaDaoImp implements ProblemaDao{
 
 	java.sql.Connection conexao;
+	Recursos recursos = new Recursos();
 	
 	public ProblemaDaoImp() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/torre","root","100889");
-            System.out.println("Conectado.. Problema Dao...");
-		} catch (Exception e) {
-			System.out.print("Erro de conexão...ProblemaDaoImp");
-		}
+		conexao = recursos.devolveAnbiente();
 	}
 	
 	@Override

@@ -1,26 +1,21 @@
 package com.core.dao;
 
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.api.dao.TemCDao;
+import com.api.modelo.Recursos;
 import com.api.modelo.TemC;
 
 public class TemCDaoImp implements TemCDao{
 	
 	java.sql.Connection conexao;
+	Recursos recursos = new Recursos();
 	
 	public TemCDaoImp() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/torre","root","100889");
-            System.out.println("Conectado.. TemC Dao...");
-		} catch (Exception e) {
-			System.out.print("Erro de conexão...TemCDaoImp");
-		}
+		conexao = recursos.devolveAnbiente();
 	}
 	
 	@Override
