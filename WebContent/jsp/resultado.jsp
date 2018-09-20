@@ -15,7 +15,7 @@
 
 <%List<String> lista =  teste.resultados(c.getNome());%>
 
-<%if(lista.size() > 0){%>
+<%if(lista != null){%>
 
 <html>
 <head>
@@ -96,7 +96,7 @@ table, td, th {
 		</header>
 		<div>
 			<form action="Autenticador.action">
-				<input type="submit">
+				<input type="submit" value="Voltar">
 			</form>
 		</div>
 	</div>

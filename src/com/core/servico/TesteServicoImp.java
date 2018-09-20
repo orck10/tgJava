@@ -97,24 +97,13 @@ public class TesteServicoImp implements TesteServico{
 	public List<String> resultados(String crianca) {
 		Crianca cri = this.crianca.findByNome(crianca);
 		Teste teste = this.teste.findCrianca(cri.getId().intValue());
-		ProfissionalServicoImple prof = new ProfissionalServicoImple();
 		List<Fase> listaFases = this.fases.findByTesteId(teste.getTesteId());
-		
-		List<Crianca> cria = new ArrayList<Crianca>();
-		cria = prof.findCriancaProfId(cri.getId().intValue());
-		Boolean fezTeste = false;
-		
-		for(Crianca c: cria) {
-			if(c.getId().equals(cri.getId())) {
-				fezTeste = true;
-			}
-		}
 		
 		List<String> lista = new ArrayList<String>();
 		int count = 0;
 		int count2 = 0;
 		int count3 = 0;
-		if(fezTeste){
+		if(!listaFases.isEmpty()){
 			for(int i = 0; i < listaFases.size(); i++) {
 				switch(listaFases.get(i).getFaseTentativas()) {
 					case 1:
