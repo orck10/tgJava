@@ -17,7 +17,7 @@ public class TesteDaoImp implements TesteDao{
 	Recursos recursos = new Recursos();
 	
 	public TesteDaoImp() {
-		conexao = recursos.devolveAnbiente();
+		conexao = recursos.devolveAmbiente();
 	}
 	
 	@Override

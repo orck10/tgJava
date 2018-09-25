@@ -15,7 +15,7 @@ public class FaseDaoImp implements FaseDao{
 	Recursos recursos = new Recursos();
 	
 	public FaseDaoImp() {
-		conexao = recursos.devolveAnbiente();
+		conexao = recursos.devolveAmbiente();
 	}
 	
 	@Override

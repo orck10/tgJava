@@ -18,7 +18,7 @@ public class ProfissionalDaoImp implements ProfissionalDao{
 	Recursos recursos = new Recursos();
 	
 	public ProfissionalDaoImp() {
-		conexao = recursos.devolveAnbiente();
+		conexao = recursos.devolveAmbiente();
 	}
 
 	@Override

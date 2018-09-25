@@ -17,7 +17,7 @@ public class CriancaDaoImp implements CriancaDao{
 	Recursos recursos = new Recursos();
 	
 	public CriancaDaoImp() {
-		conexao = recursos.devolveAnbiente();
+		conexao = recursos.devolveAmbiente();
 	}
 	
 	@Override

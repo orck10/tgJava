@@ -15,7 +15,7 @@ public class TemCDaoImp implements TemCDao{
 	Recursos recursos = new Recursos();
 	
 	public TemCDaoImp() {
-		conexao = recursos.devolveAnbiente();
+		conexao = recursos.devolveAmbiente();
 	}
 	
 	@Override

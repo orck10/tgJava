@@ -17,7 +17,7 @@ public class ProblemaDaoImp implements ProblemaDao{
 	Recursos recursos = new Recursos();
 	
 	public ProblemaDaoImp() {
-		conexao = recursos.devolveAnbiente();
+		conexao = recursos.devolveAmbiente();
 	}
 	
 	@Override
