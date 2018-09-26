@@ -32,9 +32,11 @@ public class PersistirTestes extends HttpServlet{
 		Profissional uLogado = new Profissional();
 		uLogado = prof.findByNome(nomeUsuario);
 		
+		boolean temp = false;
+		
 		TesteServicoImp teste = new TesteServicoImp();
 		
-		if(uLogado != null && uLogado.getSenha().equals(senha)) {
+		if(uLogado != null && uLogado.getSenha().equals(senha) && !temp) {
 			try {
 				// Read from request
 			    StringBuilder buffer = new StringBuilder();
@@ -64,9 +66,9 @@ public class PersistirTestes extends HttpServlet{
 			    	fase.add(f);
 			    	x++;
 			    }
-			    
-			    teste.persistirFase(crianca, fase);
-			    
+			    if(temp == false) {
+			    	temp = teste.persistirFase(crianca, fase);
+			    }
 			    resp.setContentType("application/json");
 			    resp.setCharacterEncoding("UTF-8");
 			    resp.getWriter().write("{\"error\":\"false\"}");
