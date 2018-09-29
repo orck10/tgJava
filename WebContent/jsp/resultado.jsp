@@ -58,22 +58,45 @@ table, td, th {
 			<tr>
 				<th>Padrão</th>
 				<th><%=lista.get(0) %></th>
-				<th>Muito Alto</th>
+				<th><p id="p1"></p></th>
 			</tr>
 			<tr>
 				<th>4 Movimentos</th>
 				<th><%=lista.get(1) %></th>
-				<th>Muito Alto</th>
+				<th><p id="p2"></p></th>
 			</tr>
 			<tr>
 				<th>5 Movimentos</th>
 				<th><%=lista.get(2) %></th>
-				<th>Muito Alto</th>
+				<th><p id="p3"></p></th>
 			</tr>
 		</table>
 		<br> <br>
 	</div>
 </body>
+<script>
+//scpit para mostar em forma de texto o resultado;
+	var obj = {
+		resultado: function(res) {
+			if(res < 70){
+				return "Muito Baixa";
+			}else if(res >= 70 && res < 85){
+				return "Baixa";
+			}else if(res >= 85 && res < 115){
+				return "Média";
+			}else if(res >= 115 && res < 130){
+				return "Alta";
+			}else if(res >= 130){
+				return "Muito Alta";
+			}
+			return "Não Valida";
+		}
+	}
+	document.getElementById("p1").innerHTML = obj.resultado(<%=lista.get(0) %>);
+	document.getElementById("p2").innerHTML = obj.resultado(<%=lista.get(1) %>);
+	document.getElementById("p3").innerHTML = obj.resultado(<%=lista.get(2) %>);
+</script>
+
 </html>
 
 <%}else{%>
@@ -92,10 +115,11 @@ table, td, th {
 		<header>
 			<h1 align="center">
 				Não há resultado de
-				<%=c.getNome()%></h1>
+				<%=c.getNome()%>
+			</h1>
 		</header>
 		<div>
-			<form action="Autenticador.action">
+			<form action="Autenticador.action" method="post">
 				<input type="submit" value="Voltar">
 			</form>
 		</div>
